@@ -14,7 +14,7 @@ contentsDivBtn.addEventListener('click', function(event){
     olChildren.innerText = clickedText;
     
     if(createChildNode.childElementCount >= 5){
-        alert("Your selector stack is full!");
+        alert("You can't select more than five. Your selector stack is full!");
 
     }
     else{
@@ -25,14 +25,14 @@ contentsDivBtn.addEventListener('click', function(event){
 });
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
-    const selectdNumber = parseInt(selectVHeaderNumber.innerText);
+    const selectedNumber = parseInt(selectVHeaderNumber.innerText);
 
     const perPlayer = document.getElementById('per-player');
     const perPlayerCost = parseFloat(perPlayer.value);
 
     const playerExpense = playerExpenseText.innerText;
 
-    const playerExpenses  = perPlayerCost * selectdNumber;
+    const playerExpenses  = perPlayerCost * selectedNumber;
 
     playerExpenseText.innerText = playerExpenses;
 
