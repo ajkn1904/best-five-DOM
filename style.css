@@ -3,6 +3,13 @@ header{
     height: 35em;
     width: 100%;
 }
+hr{
+    color: orangered;
+    border: 3px solid orangered;
+}
+h1, span{
+    color: #FF5E19;
+}
 footer{
     height:80px;
 }

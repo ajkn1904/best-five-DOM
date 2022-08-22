@@ -11,21 +11,25 @@
 </head>
 <body>
   
-  <header class="d-flex justify-content-center align-items-center">
-    <h1 class="text-white text-center text-bg-dark bg-opacity-75 fw-bold fs-1 p-4 rounded">Select Best Five of All the Time!</h1>
+  <header class="d-flex flex-column justify-content-center align-items-center">
+    <div class="bg-dark bg-opacity-75 p-4 w-100 text-center">
+      <h1 class="fw-bold fs-1 rounded">Select Best Five of All the Time! <hr></h1>
+      <p class="text-white fs-3">“The blunders are all there on the board, waiting to be made.”</p>
+    </div>
+
   </header>
 
   <main>
     <section class="p-3 d-flex flex-column flex-sm-column flex-md-column flex-lg-row bg-dark">
       
-      <div id="contentsDiv" class="row p-5 g-4">
+      <div class="row p-5 g-2">
        
         <div class="col-lg-4 col-md-6 col-sm-12 col-12">
           <div class="card bg-white bg-opacity-75" style="width: 16rem;">
             <img src="images/player-1.jpg" class="card-img-top">
             <div class="card-body text-center m-3">
               <h5 class="card-title fw-bold mb-3">Garry Kasparov</h5>
-              <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+              <button class="btn btn-primary fw-semibold px-5 contentsDivBtn contentsDivBtn">SELECT</button>
             </div>
         </div>
         </div>
@@ -35,7 +39,7 @@
             <img src="images/player-2.jpg" class="card-img-top">
             <div class="card-body text-center m-3">
               <h5 class="card-title fw-bold mb-3">Magnus Carlsen</h5>
-              <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+              <button class="btn btn-primary fw-semibold px-5 contentsDivBtn contentsDivBtn">SELECT</button>
             </div>
         </div>
         </div>
@@ -45,7 +49,7 @@
           <img src="images/player-3.jpg" class="card-img-top">
           <div class="card-body text-center m-3">
             <h5 class="card-title fw-bold mb-3">Bobby Fischer</h5>
-            <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+            <button class="btn btn-primary fw-semibold px-5 contentsDivBtn">SELECT</button>
           </div>
         </div>
 
@@ -57,7 +61,7 @@
           <img src="images/player-4.jpg" class="card-img-top">
           <div class="card-body text-center m-3">
             <h5 class="card-title fw-bold mb-3">J. R. Capablanca</h5>
-            <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+            <button class="btn btn-primary fw-semibold px-5 contentsDivBtn">SELECT</button>
           </div>
         </div>
 
@@ -69,7 +73,7 @@
           <img src="images/player-5.jpg" class="card-img-top">
           <div class="card-body text-center m-3">
             <h5 class="card-title fw-bold mb-3">Anatoly Karpov</h5>
-            <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+            <button class="btn btn-primary fw-semibold px-5 contentsDivBtn">SELECT</button>
           </div>
         </div>
 
@@ -81,7 +85,7 @@
           <img src="images/player-6.jpg" class="card-img-top">
           <div class="card-body text-center m-3">
             <h5 class="card-title fw-bold mb-3">Mikhail Botvinnik</h5>
-            <button class="btn btn-primary fw-semibold px-5">SELECT</button>
+            <button class="btn btn-primary fw-semibold px-5 contentsDivBtn">SELECT</button>
           </div>
         </div>
 
@@ -94,8 +98,9 @@
     <div id="side-cntent" class="bg-white bg-opacity-75 my-5 p-3 rounded">
               
       <div class="mb-5">
-        <div class="card p-3" style="width: 22rem;">
-          <h3 class="text-center">Selected - V</h3>
+        <div class="card p-3" style="width: 22rem; height:19rem;">
+          <h3 class="text-center">Selected - V <span id="selected-v-header" ></span></h3>
+          <hr>
           <ol id="selected-v-list" class="fs-5">
             
           </ol>
@@ -107,29 +112,30 @@
       <div class="">
         <div class="card bg-gray p-3" style="width: 22rem;">
             <h3 class="text-center">Budget</h3>
+            <hr>
            
             <div class="d-flex flex-row my-3"> 
               <label class="me-4" for="per-player">Per Player:</label>
-              <input class="p-1 w-50" id="per-player" type="text">
+              <input id="per-player" class="p-1 w-50  bg-primary bg-opacity-10" type="text">
             </div>
             
             <button id="calculate-btn" class="btn btn-primary">Calculate</button>
             
-            <h4 class="my-4">Player Expenses:  $<span id="player-expense" class="fw-semibold">0000</span> </h4>
+            <h4 class="my-4">Player Expenses:  $<span id="player-expense" class="fw-semibold text-black">0000</span> </h4>
 
             <div class="d-flex flex-row my-2"> 
               <label class="me-4" for="maneger">Manager:</label>
-              <input class="p-1 w-50" id="maneger" type="text">
+              <input id="maneger" class="p-1 w-50 bg-primary bg-opacity-10" type="text">
             </div>
             
             <div class="d-flex flex-row my-2"> 
               <label class="me-5" for="coach">Coach:</label>
-              <input class="p-1 w-50" id="coach" type="text">
+              <input id="coach" class="p-1 w-50  bg-primary bg-opacity-10" type="text">
             </div>
 
             <button id="calculate-total-btn" class="btn btn-primary my-2">Calculate Total</button>
 
-            <h4 class="mt-4 d-flex justify-content-lg-between">Total <span class="text-primary">$<span id="total" class="fw-semibold text-primary">0000</span></span> </h4>
+            <h4 class="mt-4 d-flex justify-content-lg-between">Total <span>$<span id="total" class="fw-semibold">0000</span></span> </h4>
         
         </div>
       </div>
