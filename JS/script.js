@@ -1,27 +1,30 @@
 const selectVHeaderNumber = document.getElementById('selected-v-header');
 const playerExpenseText = document.getElementById('player-expense');
 
+function afterAddToList(element){
+    element.disabled = true;
+  }
+
 // -----------------creating li and inserting them to select-v div------------------
 const btns = document.querySelectorAll('.contentsDivBtn');
 
 btns.forEach(contentsDivBtn => {
 contentsDivBtn.addEventListener('click', function(event){
-    
     const clickedText = event.target.previousElementSibling.innerText;
-    event.stopPropagation(clickedText);
     const createChildNode = document.getElementById('selected-v-list');
     const olChildren = document.createElement("li");
     olChildren.innerText = clickedText;
     
     if(createChildNode.childElementCount >= 5){
-        alert("You can't select more than five. Your selector stack is full!");
-
+        alert("You can't select more than five. Your selector stack is full!");       
     }
     else{
+        afterAddToList(this);
         createChildNode.appendChild(olChildren);
         selectVHeaderNumber.innerText = createChildNode.childElementCount;
     }
-});
+
+   });
 });
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
